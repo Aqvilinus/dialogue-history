@@ -2,7 +2,8 @@ module DialogueHistory.Localization.Packages
 
 import Codeware.Localization.*
 
-// keep text in {brackets}
+// Note for translators: Any text in curly braces should be kept as is, as it is
+// a placeholder for a value that will be inserted into the string at runtime.
 
 public class English extends ModLocalizationPackage {
   protected func DefineTexts() {
@@ -36,25 +37,31 @@ public class English extends ModLocalizationPackage {
     this.Text("DialogueHistory-Config-General-Persistent-DisplayName",     "Ignore Persistent Lines");
     this.Text("DialogueHistory-Config-General-Persistent-Description",     "Whether to not store persistent subtitles in the history, which will most likely lead to repeated lines if disabled.");
 
-    this.Text("DialogueHistory-Config-Interface",                          "Interface");
-    this.Text("DialogueHistory-Config-Interface-Animate-DisplayName",      "Animate");
-    this.Text("DialogueHistory-Config-Interface-Animate-Description",      "Whether if some parts of the popup should animate.");
-    this.Text("DialogueHistory-Config-Interface-Height-DisplayName",       "Height");
-    this.Text("DialogueHistory-Config-Interface-Height-Description",       "The height of the popup.");
-    this.Text("DialogueHistory-Config-Interface-Width-DisplayName",        "Width");
-    this.Text("DialogueHistory-Config-Interface-Width-Description",        "The width of the popup.");
-    this.Text("DialogueHistory-Config-Interface-FontSize-DisplayName",     "Font Size");
-    this.Text("DialogueHistory-Config-Interface-FontSize-Description",     "The font size for lines.");
-    this.Text("DialogueHistory-Config-Interface-Margin-DisplayName",       "Margin");
-    this.Text("DialogueHistory-Config-Interface-Margin-Description",       "The amount of space to leave between lines.");
-    this.Text("DialogueHistory-Config-Interface-FrameColor-DisplayName",   "Frame Color");
-    this.Text("DialogueHistory-Config-Interface-FrameColor-Description",   "The color of the frame of the widget.");
-    this.Text("DialogueHistory-Config-Interface-SpeakerColor-DisplayName", "Speaker Color");
-    this.Text("DialogueHistory-Config-Interface-SpeakerColor-Description", "The default color for speakers.");
-    this.Text("DialogueHistory-Config-Interface-VSpeakerColor-DisplayName", "V Speaker Color");
-    this.Text("DialogueHistory-Config-Interface-VSpeakerColor-Description", "The speaker color for V.");
-    this.Text("DialogueHistory-Config-Interface-TextColor-DisplayName",    "Text Color");
-    this.Text("DialogueHistory-Config-Interface-TextColor-Description",    "The color of the text.");
+    this.Text("DialogueHistory-Config-Interface",                               "Interface");
+    this.Text("DialogueHistory-Config-Interface-Animate-DisplayName",           "Animate");
+    this.Text("DialogueHistory-Config-Interface-Animate-Description",           "Whether if some parts of the popup should animate.");
+    this.Text("DialogueHistory-Config-Interface-Height-DisplayName",            "Height");
+    this.Text("DialogueHistory-Config-Interface-Height-Description",            "The height of the popup.");
+    this.Text("DialogueHistory-Config-Interface-Width-DisplayName",             "Width");
+    this.Text("DialogueHistory-Config-Interface-Width-Description",             "The width of the popup.");
+    this.Text("DialogueHistory-Config-Interface-FontSize-DisplayName",          "Font Size");
+    this.Text("DialogueHistory-Config-Interface-FontSize-Description",          "The font size for lines.");
+    this.Text("DialogueHistory-Config-Interface-Margin-DisplayName",            "Margin");
+    this.Text("DialogueHistory-Config-Interface-Margin-Description",            "The amount of space to leave between lines.");
+    this.Text("DialogueHistory-Config-Interface-FrameColor-DisplayName",        "Frame Color");
+    this.Text("DialogueHistory-Config-Interface-FrameColor-Description",        "The color of the frame of the widget.");
+    this.Text("DialogueHistory-Config-Interface-VNameColor-DisplayName",        "V Name Color");
+    this.Text("DialogueHistory-Config-Interface-VNameColor-Description",        "The color for V's name in subtitles.");
+    this.Text("DialogueHistory-Config-Interface-OverheadNameColor-DisplayName", "Overhead Name Color");
+    this.Text("DialogueHistory-Config-Interface-OverheadNameColor-Description", "The color for names in overhead subtitles (e.g. NPCs you interact with).");
+    this.Text("DialogueHistory-Config-Interface-RadioNameColor-DisplayName",    "Radio Name Color");
+    this.Text("DialogueHistory-Config-Interface-RadioNameColor-Description",    "The color for names in subtitles from radios.");
+    this.Text("DialogueHistory-Config-Interface-GlobalTVNameColor-DisplayName", "TV Name Color");
+    this.Text("DialogueHistory-Config-Interface-GlobalTVNameColor-Description", "The color for names in subtitles from TVs.");
+    this.Text("DialogueHistory-Config-Interface-DefaultNameColor-DisplayName",  "Default Name Color");
+    this.Text("DialogueHistory-Config-Interface-DefaultNameColor-Description",  "The default color for names in subtitles.");
+    this.Text("DialogueHistory-Config-Interface-TextColor-DisplayName",         "Subtitle Text Color");
+    this.Text("DialogueHistory-Config-Interface-TextColor-Description",         "The color for the text of all subtitles.");
 
     this.Text("DialogueHistory-Color-White", "White");
     this.Text("DialogueHistory-Color-Red", "Red");
