@@ -1,3 +1,17 @@
+## [v1.1.0-rc2](https://github.com/Norviah/dialogue-history/compare/v1.1.0-rc1...v1.1.0-rc2) (2025-01-04)
+
+### Refactor
+
+- **localization**: update int placeholders from `{num}` to `{int}` <code>[996f111](https://github.com/Norviah/dialogue-history/commit/996f1111fb13fb09bbd0cb358ff5ad557c5598cd)</code>
+
+### Features
+
+- **localization**: create localization keys for some config options <code>[a77c382](https://github.com/Norviah/dialogue-history/commit/a77c3821f52b74b391ff12db1e281449a05693b2)</code>
+
+### Build System
+
+- **scripts/import**: delete all mod files before importing <code>[ff048a0](https://github.com/Norviah/dialogue-history/commit/ff048a08b82b62dcec1bdc28649d99987dba536f)</code>
+
 ## [v1.1.0-rc1](https://github.com/Norviah/dialogue-history/compare/v1.0.2...v1.1.0-rc1) (2025-01-03)
 
 ### Features
