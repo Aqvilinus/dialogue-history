@@ -1,3 +1,13 @@
+## [v1.1.0-rc1](https://github.com/Norviah/dialogue-history/compare/v1.0.2...v1.1.0-rc1) (2025-01-03)
+
+### Features
+
+- v1.1.0-rc1 <code>[601d324](https://github.com/Norviah/dialogue-history/commit/601d32468cab7e2eb7ca50b8d38b611111f4b278)</code>
+
+### Build System
+
+- update scripts <code>[7a816b7](https://github.com/Norviah/dialogue-history/commit/7a816b7d600c3dccb264485269429a26a57333a3)</code>
+
 ## [v1.0.2](https://github.com/Norviah/dialogue-history/compare/v1.0.1...v1.0.2) (2024-12-27)
 
 ### Build System
