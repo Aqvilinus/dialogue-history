@@ -67,6 +67,12 @@ public class Footer extends InGamePopupFooter {
     this.SetRootWidget(footer);
   }
 
+  protected cb func OnInitialize() {
+    this.m_buttonHints = ButtonHintsManager.GetInstance().SpawnButtonHints(this.m_inputHolder);
+    this.m_buttonHints.SetStyle(n"popup");
+    this.m_buttonHints.AddButtonHint(n"cancel", "UI-UserActions-Close");
+  }
+
   public static func Create() -> ref<Footer> {
     let self: ref<Footer> = new Footer();
     self.CreateInstance();

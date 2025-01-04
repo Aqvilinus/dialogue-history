@@ -1,5 +1,6 @@
 module DialogueHistory.UI
 
+import DialogueHistory.Core.{Config, History}
 import Codeware.Localization.*
 import Codeware.UI.*
 
@@ -25,9 +26,21 @@ public abstract class Practice extends inkCustomController {
 		return this.m_workbench.GetSize();
 	}
 
+  protected func GetPadding() -> Float {
+    return this.m_workbench.GetPadding();
+  }
+
 	protected func GetLocalizedText(key: String) -> String {
 		return this.m_workbench.GetTranslator().GetText(key);
 	}
+
+  protected func GetHistory() -> wref<History> {
+    return this.m_workbench.GetHistory();
+  }
+
+  protected func GetConfig() -> wref<Config> {
+    return this.m_workbench.GetConfig();
+  }
 
 	protected func UpdateHint(action: CName, label: String, active: Bool) {
 		if active {

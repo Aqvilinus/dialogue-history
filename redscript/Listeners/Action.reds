@@ -1,5 +1,6 @@
-module DialogueHistory.Core
+module DialogueHistory.Listener
 
+import DialogueHistory.Core.Config
 import DialogueHistory.Utils.Logger.*
 import DialogueHistory.UI.DialogueHistoryPopup
 import Codeware.Localization.LocalizationSystem

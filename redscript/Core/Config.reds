@@ -1,7 +1,6 @@
 module DialogueHistory.Core
 
-import DialogueHistory.Utils.*
-import Codeware.UI.*
+import DialogueHistory.Utils.Color
 
 public class Config extends ScriptableService {
   // ---
@@ -18,20 +17,20 @@ public class Config extends ScriptableService {
   @runtimeProperty("ModSettings.mod", "Dialogue History")
   @runtimeProperty("ModSettings.category", "DialogueHistory-Config-General")
   @runtimeProperty("ModSettings.category.order", "1")
-  @runtimeProperty("ModSettings.displayName", "DialogueHistory-Config-General-Limit-DisplayName")
-  @runtimeProperty("ModSettings.description", "DialogueHistory-Config-General-Limit-Description")
-  public let limitHistory: Bool = false;
+  @runtimeProperty("ModSettings.displayName", "DialogueHistory-Config-General-Lifecycle-DisplayName")
+  @runtimeProperty("ModSettings.description", "DialogueHistory-Config-General-Lifecycle-Description")
+  public let lifecycle: Bool = true;
 
   @runtimeProperty("ModSettings.mod", "Dialogue History")
   @runtimeProperty("ModSettings.category", "DialogueHistory-Config-General")
   @runtimeProperty("ModSettings.category.order", "1")
-  @runtimeProperty("ModSettings.displayName", "DialogueHistory-Config-General-MaxEntries-DisplayName")
-  @runtimeProperty("ModSettings.description", "DialogueHistory-Config-General-MaxEntries-Description")
-  @runtimeProperty("ModSettings.dependency", "limitHistory")
+  @runtimeProperty("ModSettings.displayName", "DialogueHistory-Config-General-LifecycleDays-DisplayName")
+  @runtimeProperty("ModSettings.description", "DialogueHistory-Config-General-LifecycleDays-Description")
+  @runtimeProperty("ModSettings.dependency", "lifecycle")
   @runtimeProperty("ModSettings.min", "1")
-  @runtimeProperty("ModSettings.max", "1000")
+  @runtimeProperty("ModSettings.max", "365")
   @runtimeProperty("ModSettings.step", "1")
-  public let maxEntries: Int32 = 100;
+  public let lifecycleDays: Int32 = 7;
 
   @runtimeProperty("ModSettings.mod", "Dialogue History")
   @runtimeProperty("ModSettings.category", "DialogueHistory-Config-General")
@@ -47,12 +46,19 @@ public class Config extends ScriptableService {
   @runtimeProperty("ModSettings.mod", "Dialogue History")
   @runtimeProperty("ModSettings.category", "DialogueHistory-Config-Interface")
   @runtimeProperty("ModSettings.category.order", "2")
+  @runtimeProperty("ModSettings.displayName", "DialogueHistory-Config-Interface-Animate-DisplayName")
+  @runtimeProperty("ModSettings.description", "DialogueHistory-Config-Interface-Animate-Description")
+  public let animatePopup: Bool = true;
+
+  @runtimeProperty("ModSettings.mod", "Dialogue History")
+  @runtimeProperty("ModSettings.category", "DialogueHistory-Config-Interface")
+  @runtimeProperty("ModSettings.category.order", "2")
   @runtimeProperty("ModSettings.displayName", "DialogueHistory-Config-Interface-Height-DisplayName")
   @runtimeProperty("ModSettings.description", "DialogueHistory-Config-Interface-Height-Description")
   @runtimeProperty("ModSettings.min", "0")
-  @runtimeProperty("ModSettings.max", "2000.0")
+  @runtimeProperty("ModSettings.max", "5000.0")
   @runtimeProperty("ModSettings.step", "1.0")
-  public let popupHeight: Float = 1140.0;
+  public let popupHeight: Float = 1500.0;
 
   @runtimeProperty("ModSettings.mod", "Dialogue History")
   @runtimeProperty("ModSettings.category", "DialogueHistory-Config-Interface")
@@ -60,9 +66,9 @@ public class Config extends ScriptableService {
   @runtimeProperty("ModSettings.displayName", "DialogueHistory-Config-Interface-Width-DisplayName")
   @runtimeProperty("ModSettings.description", "DialogueHistory-Config-Interface-Width-Description")
   @runtimeProperty("ModSettings.min", "0")
-  @runtimeProperty("ModSettings.max", "2000.0")
+  @runtimeProperty("ModSettings.max", "5000.0")
   @runtimeProperty("ModSettings.step", "1.0")
-  public let popupWidth: Float = 1550.0;
+  public let popupWidth: Float = 2300.0;
 
   @runtimeProperty("ModSettings.mod", "Dialogue History")
   @runtimeProperty("ModSettings.category", "DialogueHistory-Config-Interface")
@@ -91,12 +97,148 @@ public class Config extends ScriptableService {
   @runtimeProperty("ModSettings.description", "DialogueHistory-Config-Interface-FrameColor-Description")
   @runtimeProperty("ModSettings.displayValues.White", "DialogueHistory-Color-White")
   @runtimeProperty("ModSettings.displayValues.Red", "DialogueHistory-Color-Red")
+  @runtimeProperty("ModSettings.displayValues.ActiveRed", "DialogueHistory-Color-ActiveRed")
   @runtimeProperty("ModSettings.displayValues.MildRed", "DialogueHistory-Color-MildRed")
+  @runtimeProperty("ModSettings.displayValues.DarkRed", "DialogueHistory-Color-DarkRed")
+  @runtimeProperty("ModSettings.displayValues.FaintRed", "DialogueHistory-Color-FaintRed")
   @runtimeProperty("ModSettings.displayValues.Blue", "DialogueHistory-Color-Blue")
+  @runtimeProperty("ModSettings.displayValues.ActiveBlue", "DialogueHistory-Color-ActiveBlue")
+  @runtimeProperty("ModSettings.displayValues.MildBlue", "DialogueHistory-Color-MildBlue")
+  @runtimeProperty("ModSettings.displayValues.DarkBlue", "DialogueHistory-Color-DarkBlue")
+  @runtimeProperty("ModSettings.displayValues.FaintBlue", "DialogueHistory-Color-FaintBlue")
+  @runtimeProperty("ModSettings.displayValues.MediumBlue", "DialogueHistory-Color-MediumBlue")
   @runtimeProperty("ModSettings.displayValues.Yellow", "DialogueHistory-Color-Yellow")
+  @runtimeProperty("ModSettings.displayValues.ActiveYellow", "DialogueHistory-Color-ActiveYellow")
+  @runtimeProperty("ModSettings.displayValues.MildYellow", "DialogueHistory-Color-MildYellow")
+  @runtimeProperty("ModSettings.displayValues.Gold", "DialogueHistory-Color-Gold")
+  @runtimeProperty("ModSettings.displayValues.FaintYellow", "DialogueHistory-Color-FaintYellow")
+  @runtimeProperty("ModSettings.displayValues.DarkGold", "DialogueHistory-Color-DarkGold")
   @runtimeProperty("ModSettings.displayValues.Green", "DialogueHistory-Color-Green")
+  @runtimeProperty("ModSettings.displayValues.MildGreen", "DialogueHistory-Color-MildGreen")
+  @runtimeProperty("ModSettings.displayValues.ActiveGreen", "DialogueHistory-Color-ActiveGreen")
+  @runtimeProperty("ModSettings.displayValues.DarkGreen", "DialogueHistory-Color-DarkGreen")
   @runtimeProperty("ModSettings.displayValues.Orange", "DialogueHistory-Color-Orange")
   public let frameColor: Color = Color.MildRed;
+
+  @runtimeProperty("ModSettings.mod", "Dialogue History")
+  @runtimeProperty("ModSettings.category", "DialogueHistory-Config-Interface")
+  @runtimeProperty("ModSettings.category.order", "2")
+  @runtimeProperty("ModSettings.displayName", "DialogueHistory-Config-Interface-VSpeakerColor-DisplayName")
+  @runtimeProperty("ModSettings.description", "DialogueHistory-Config-Interface-VSpeakerColor-Description")
+  @runtimeProperty("ModSettings.displayValues.White", "DialogueHistory-Color-White")
+  @runtimeProperty("ModSettings.displayValues.Red", "DialogueHistory-Color-Red")
+  @runtimeProperty("ModSettings.displayValues.ActiveRed", "DialogueHistory-Color-ActiveRed")
+  @runtimeProperty("ModSettings.displayValues.MildRed", "DialogueHistory-Color-MildRed")
+  @runtimeProperty("ModSettings.displayValues.DarkRed", "DialogueHistory-Color-DarkRed")
+  @runtimeProperty("ModSettings.displayValues.FaintRed", "DialogueHistory-Color-FaintRed")
+  @runtimeProperty("ModSettings.displayValues.Blue", "DialogueHistory-Color-Blue")
+  @runtimeProperty("ModSettings.displayValues.ActiveBlue", "DialogueHistory-Color-ActiveBlue")
+  @runtimeProperty("ModSettings.displayValues.MildBlue", "DialogueHistory-Color-MildBlue")
+  @runtimeProperty("ModSettings.displayValues.DarkBlue", "DialogueHistory-Color-DarkBlue")
+  @runtimeProperty("ModSettings.displayValues.FaintBlue", "DialogueHistory-Color-FaintBlue")
+  @runtimeProperty("ModSettings.displayValues.MediumBlue", "DialogueHistory-Color-MediumBlue")
+  @runtimeProperty("ModSettings.displayValues.Yellow", "DialogueHistory-Color-Yellow")
+  @runtimeProperty("ModSettings.displayValues.ActiveYellow", "DialogueHistory-Color-ActiveYellow")
+  @runtimeProperty("ModSettings.displayValues.MildYellow", "DialogueHistory-Color-MildYellow")
+  @runtimeProperty("ModSettings.displayValues.Gold", "DialogueHistory-Color-Gold")
+  @runtimeProperty("ModSettings.displayValues.FaintYellow", "DialogueHistory-Color-FaintYellow")
+  @runtimeProperty("ModSettings.displayValues.DarkGold", "DialogueHistory-Color-DarkGold")
+  @runtimeProperty("ModSettings.displayValues.Green", "DialogueHistory-Color-Green")
+  @runtimeProperty("ModSettings.displayValues.MildGreen", "DialogueHistory-Color-MildGreen")
+  @runtimeProperty("ModSettings.displayValues.ActiveGreen", "DialogueHistory-Color-ActiveGreen")
+  @runtimeProperty("ModSettings.displayValues.DarkGreen", "DialogueHistory-Color-DarkGreen")
+  @runtimeProperty("ModSettings.displayValues.Orange", "DialogueHistory-Color-Orange")
+  public let vSpeakerColor: Color = Color.Red;
+
+  @runtimeProperty("ModSettings.mod", "Dialogue History")
+  @runtimeProperty("ModSettings.category", "DialogueHistory-Config-Interface")
+  @runtimeProperty("ModSettings.category.order", "2")
+  @runtimeProperty("ModSettings.displayName", "Overhead Color")
+  @runtimeProperty("ModSettings.description", "The color for speaker color for overhead subtitles.")
+  @runtimeProperty("ModSettings.displayValues.White", "DialogueHistory-Color-White")
+  @runtimeProperty("ModSettings.displayValues.Red", "DialogueHistory-Color-Red")
+  @runtimeProperty("ModSettings.displayValues.ActiveRed", "DialogueHistory-Color-ActiveRed")
+  @runtimeProperty("ModSettings.displayValues.MildRed", "DialogueHistory-Color-MildRed")
+  @runtimeProperty("ModSettings.displayValues.DarkRed", "DialogueHistory-Color-DarkRed")
+  @runtimeProperty("ModSettings.displayValues.FaintRed", "DialogueHistory-Color-FaintRed")
+  @runtimeProperty("ModSettings.displayValues.Blue", "DialogueHistory-Color-Blue")
+  @runtimeProperty("ModSettings.displayValues.ActiveBlue", "DialogueHistory-Color-ActiveBlue")
+  @runtimeProperty("ModSettings.displayValues.MildBlue", "DialogueHistory-Color-MildBlue")
+  @runtimeProperty("ModSettings.displayValues.DarkBlue", "DialogueHistory-Color-DarkBlue")
+  @runtimeProperty("ModSettings.displayValues.FaintBlue", "DialogueHistory-Color-FaintBlue")
+  @runtimeProperty("ModSettings.displayValues.MediumBlue", "DialogueHistory-Color-MediumBlue")
+  @runtimeProperty("ModSettings.displayValues.Yellow", "DialogueHistory-Color-Yellow")
+  @runtimeProperty("ModSettings.displayValues.ActiveYellow", "DialogueHistory-Color-ActiveYellow")
+  @runtimeProperty("ModSettings.displayValues.MildYellow", "DialogueHistory-Color-MildYellow")
+  @runtimeProperty("ModSettings.displayValues.Gold", "DialogueHistory-Color-Gold")
+  @runtimeProperty("ModSettings.displayValues.FaintYellow", "DialogueHistory-Color-FaintYellow")
+  @runtimeProperty("ModSettings.displayValues.DarkGold", "DialogueHistory-Color-DarkGold")
+  @runtimeProperty("ModSettings.displayValues.Green", "DialogueHistory-Color-Green")
+  @runtimeProperty("ModSettings.displayValues.MildGreen", "DialogueHistory-Color-MildGreen")
+  @runtimeProperty("ModSettings.displayValues.ActiveGreen", "DialogueHistory-Color-ActiveGreen")
+  @runtimeProperty("ModSettings.displayValues.DarkGreen", "DialogueHistory-Color-DarkGreen")
+  @runtimeProperty("ModSettings.displayValues.Orange", "DialogueHistory-Color-Orange")
+  public let overheadColor: Color = Color.Blue;
+
+  @runtimeProperty("ModSettings.mod", "Dialogue History")
+  @runtimeProperty("ModSettings.category", "DialogueHistory-Config-Interface")
+  @runtimeProperty("ModSettings.category.order", "2")
+  @runtimeProperty("ModSettings.displayName", "Radio Color")
+  @runtimeProperty("ModSettings.description", "The color for speaker color for radio subtitles.")
+  @runtimeProperty("ModSettings.displayValues.White", "DialogueHistory-Color-White")
+  @runtimeProperty("ModSettings.displayValues.Red", "DialogueHistory-Color-Red")
+  @runtimeProperty("ModSettings.displayValues.ActiveRed", "DialogueHistory-Color-ActiveRed")
+  @runtimeProperty("ModSettings.displayValues.MildRed", "DialogueHistory-Color-MildRed")
+  @runtimeProperty("ModSettings.displayValues.DarkRed", "DialogueHistory-Color-DarkRed")
+  @runtimeProperty("ModSettings.displayValues.FaintRed", "DialogueHistory-Color-FaintRed")
+  @runtimeProperty("ModSettings.displayValues.Blue", "DialogueHistory-Color-Blue")
+  @runtimeProperty("ModSettings.displayValues.ActiveBlue", "DialogueHistory-Color-ActiveBlue")
+  @runtimeProperty("ModSettings.displayValues.MildBlue", "DialogueHistory-Color-MildBlue")
+  @runtimeProperty("ModSettings.displayValues.DarkBlue", "DialogueHistory-Color-DarkBlue")
+  @runtimeProperty("ModSettings.displayValues.FaintBlue", "DialogueHistory-Color-FaintBlue")
+  @runtimeProperty("ModSettings.displayValues.MediumBlue", "DialogueHistory-Color-MediumBlue")
+  @runtimeProperty("ModSettings.displayValues.Yellow", "DialogueHistory-Color-Yellow")
+  @runtimeProperty("ModSettings.displayValues.ActiveYellow", "DialogueHistory-Color-ActiveYellow")
+  @runtimeProperty("ModSettings.displayValues.MildYellow", "DialogueHistory-Color-MildYellow")
+  @runtimeProperty("ModSettings.displayValues.Gold", "DialogueHistory-Color-Gold")
+  @runtimeProperty("ModSettings.displayValues.FaintYellow", "DialogueHistory-Color-FaintYellow")
+  @runtimeProperty("ModSettings.displayValues.DarkGold", "DialogueHistory-Color-DarkGold")
+  @runtimeProperty("ModSettings.displayValues.Green", "DialogueHistory-Color-Green")
+  @runtimeProperty("ModSettings.displayValues.MildGreen", "DialogueHistory-Color-MildGreen")
+  @runtimeProperty("ModSettings.displayValues.ActiveGreen", "DialogueHistory-Color-ActiveGreen")
+  @runtimeProperty("ModSettings.displayValues.DarkGreen", "DialogueHistory-Color-DarkGreen")
+  @runtimeProperty("ModSettings.displayValues.Orange", "DialogueHistory-Color-Orange")
+  public let radioColor: Color = Color.Green;
+
+  @runtimeProperty("ModSettings.mod", "Dialogue History")
+  @runtimeProperty("ModSettings.category", "DialogueHistory-Config-Interface")
+  @runtimeProperty("ModSettings.category.order", "2")
+  @runtimeProperty("ModSettings.displayName", "Global TV Color")
+  @runtimeProperty("ModSettings.description", "The color for speaker color for global TV subtitles.")
+  @runtimeProperty("ModSettings.displayValues.White", "DialogueHistory-Color-White")
+  @runtimeProperty("ModSettings.displayValues.Red", "DialogueHistory-Color-Red")
+  @runtimeProperty("ModSettings.displayValues.ActiveRed", "DialogueHistory-Color-ActiveRed")
+  @runtimeProperty("ModSettings.displayValues.MildRed", "DialogueHistory-Color-MildRed")
+  @runtimeProperty("ModSettings.displayValues.DarkRed", "DialogueHistory-Color-DarkRed")
+  @runtimeProperty("ModSettings.displayValues.FaintRed", "DialogueHistory-Color-FaintRed")
+  @runtimeProperty("ModSettings.displayValues.Blue", "DialogueHistory-Color-Blue")
+  @runtimeProperty("ModSettings.displayValues.ActiveBlue", "DialogueHistory-Color-ActiveBlue")
+  @runtimeProperty("ModSettings.displayValues.MildBlue", "DialogueHistory-Color-MildBlue")
+  @runtimeProperty("ModSettings.displayValues.DarkBlue", "DialogueHistory-Color-DarkBlue")
+  @runtimeProperty("ModSettings.displayValues.FaintBlue", "DialogueHistory-Color-FaintBlue")
+  @runtimeProperty("ModSettings.displayValues.MediumBlue", "DialogueHistory-Color-MediumBlue")
+  @runtimeProperty("ModSettings.displayValues.Yellow", "DialogueHistory-Color-Yellow")
+  @runtimeProperty("ModSettings.displayValues.ActiveYellow", "DialogueHistory-Color-ActiveYellow")
+  @runtimeProperty("ModSettings.displayValues.MildYellow", "DialogueHistory-Color-MildYellow")
+  @runtimeProperty("ModSettings.displayValues.Gold", "DialogueHistory-Color-Gold")
+  @runtimeProperty("ModSettings.displayValues.FaintYellow", "DialogueHistory-Color-FaintYellow")
+  @runtimeProperty("ModSettings.displayValues.DarkGold", "DialogueHistory-Color-DarkGold")
+  @runtimeProperty("ModSettings.displayValues.Green", "DialogueHistory-Color-Green")
+  @runtimeProperty("ModSettings.displayValues.MildGreen", "DialogueHistory-Color-MildGreen")
+  @runtimeProperty("ModSettings.displayValues.ActiveGreen", "DialogueHistory-Color-ActiveGreen")
+  @runtimeProperty("ModSettings.displayValues.DarkGreen", "DialogueHistory-Color-DarkGreen")
+  @runtimeProperty("ModSettings.displayValues.Orange", "DialogueHistory-Color-Orange")
+  public let globalTVColor: Color = Color.Yellow;
 
   @runtimeProperty("ModSettings.mod", "Dialogue History")
   @runtimeProperty("ModSettings.category", "DialogueHistory-Config-Interface")
@@ -105,10 +247,26 @@ public class Config extends ScriptableService {
   @runtimeProperty("ModSettings.description", "DialogueHistory-Config-Interface-SpeakerColor-Description")
   @runtimeProperty("ModSettings.displayValues.White", "DialogueHistory-Color-White")
   @runtimeProperty("ModSettings.displayValues.Red", "DialogueHistory-Color-Red")
+  @runtimeProperty("ModSettings.displayValues.ActiveRed", "DialogueHistory-Color-ActiveRed")
   @runtimeProperty("ModSettings.displayValues.MildRed", "DialogueHistory-Color-MildRed")
+  @runtimeProperty("ModSettings.displayValues.DarkRed", "DialogueHistory-Color-DarkRed")
+  @runtimeProperty("ModSettings.displayValues.FaintRed", "DialogueHistory-Color-FaintRed")
   @runtimeProperty("ModSettings.displayValues.Blue", "DialogueHistory-Color-Blue")
+  @runtimeProperty("ModSettings.displayValues.ActiveBlue", "DialogueHistory-Color-ActiveBlue")
+  @runtimeProperty("ModSettings.displayValues.MildBlue", "DialogueHistory-Color-MildBlue")
+  @runtimeProperty("ModSettings.displayValues.DarkBlue", "DialogueHistory-Color-DarkBlue")
+  @runtimeProperty("ModSettings.displayValues.FaintBlue", "DialogueHistory-Color-FaintBlue")
+  @runtimeProperty("ModSettings.displayValues.MediumBlue", "DialogueHistory-Color-MediumBlue")
   @runtimeProperty("ModSettings.displayValues.Yellow", "DialogueHistory-Color-Yellow")
+  @runtimeProperty("ModSettings.displayValues.ActiveYellow", "DialogueHistory-Color-ActiveYellow")
+  @runtimeProperty("ModSettings.displayValues.MildYellow", "DialogueHistory-Color-MildYellow")
+  @runtimeProperty("ModSettings.displayValues.Gold", "DialogueHistory-Color-Gold")
+  @runtimeProperty("ModSettings.displayValues.FaintYellow", "DialogueHistory-Color-FaintYellow")
+  @runtimeProperty("ModSettings.displayValues.DarkGold", "DialogueHistory-Color-DarkGold")
   @runtimeProperty("ModSettings.displayValues.Green", "DialogueHistory-Color-Green")
+  @runtimeProperty("ModSettings.displayValues.MildGreen", "DialogueHistory-Color-MildGreen")
+  @runtimeProperty("ModSettings.displayValues.ActiveGreen", "DialogueHistory-Color-ActiveGreen")
+  @runtimeProperty("ModSettings.displayValues.DarkGreen", "DialogueHistory-Color-DarkGreen")
   @runtimeProperty("ModSettings.displayValues.Orange", "DialogueHistory-Color-Orange")
   public let speakerColor: Color = Color.Red;
 
@@ -119,85 +277,39 @@ public class Config extends ScriptableService {
   @runtimeProperty("ModSettings.description", "DialogueHistory-Config-Interface-TextColor-Description")
   @runtimeProperty("ModSettings.displayValues.White", "DialogueHistory-Color-White")
   @runtimeProperty("ModSettings.displayValues.Red", "DialogueHistory-Color-Red")
+  @runtimeProperty("ModSettings.displayValues.ActiveRed", "DialogueHistory-Color-ActiveRed")
   @runtimeProperty("ModSettings.displayValues.MildRed", "DialogueHistory-Color-MildRed")
+  @runtimeProperty("ModSettings.displayValues.DarkRed", "DialogueHistory-Color-DarkRed")
+  @runtimeProperty("ModSettings.displayValues.FaintRed", "DialogueHistory-Color-FaintRed")
   @runtimeProperty("ModSettings.displayValues.Blue", "DialogueHistory-Color-Blue")
+  @runtimeProperty("ModSettings.displayValues.ActiveBlue", "DialogueHistory-Color-ActiveBlue")
+  @runtimeProperty("ModSettings.displayValues.MildBlue", "DialogueHistory-Color-MildBlue")
+  @runtimeProperty("ModSettings.displayValues.DarkBlue", "DialogueHistory-Color-DarkBlue")
+  @runtimeProperty("ModSettings.displayValues.FaintBlue", "DialogueHistory-Color-FaintBlue")
+  @runtimeProperty("ModSettings.displayValues.MediumBlue", "DialogueHistory-Color-MediumBlue")
   @runtimeProperty("ModSettings.displayValues.Yellow", "DialogueHistory-Color-Yellow")
+  @runtimeProperty("ModSettings.displayValues.ActiveYellow", "DialogueHistory-Color-ActiveYellow")
+  @runtimeProperty("ModSettings.displayValues.MildYellow", "DialogueHistory-Color-MildYellow")
+  @runtimeProperty("ModSettings.displayValues.Gold", "DialogueHistory-Color-Gold")
+  @runtimeProperty("ModSettings.displayValues.FaintYellow", "DialogueHistory-Color-FaintYellow")
+  @runtimeProperty("ModSettings.displayValues.DarkGold", "DialogueHistory-Color-DarkGold")
   @runtimeProperty("ModSettings.displayValues.Green", "DialogueHistory-Color-Green")
+  @runtimeProperty("ModSettings.displayValues.MildGreen", "DialogueHistory-Color-MildGreen")
+  @runtimeProperty("ModSettings.displayValues.ActiveGreen", "DialogueHistory-Color-ActiveGreen")
+  @runtimeProperty("ModSettings.displayValues.DarkGreen", "DialogueHistory-Color-DarkGreen")
   @runtimeProperty("ModSettings.displayValues.Orange", "DialogueHistory-Color-Orange")
   public let textColor: Color = Color.White;
 
-  // ---
-  // PROPERTIES
-  // ---
-
-  private let lines: ref<Queue>;
-
-  private func Listen() -> Void {
+  private cb func OnLoad() -> Void {
     ModSettings.RegisterListenerToClass(this);
   }
 
-  private func Unlisten() -> Void {
-    ModSettings.UnregisterListenerToClass(this);
-  }
-
-  private func Register() -> Void {
-    this.Listen();
-
-    GameInstance.GetCallbackSystem().RegisterCallback(n"Session/Ready", this, n"OnSessionReady");
-  }
-
-  private cb func OnLoad() -> Void {
-    this.Register();
-
-    this.lines = new Queue();
-    this.lines.Initialize();
-  }
-
   private cb func OnReload() -> Void {
-    this.Listen();
+    ModSettings.RegisterListenerToClass(this);
   }
 
   private cb func OnUninitialize() -> Void {
-    this.Unlisten();
-    
-    this.lines.Clear();
-    this.lines = null;
-  }
-
-  private cb final func OnSessionReady(event: ref<GameSessionEvent>) -> Void {
-    this.lines.Clear();
-  }
-
-  public final func GetFrameColor() -> CName {
-    return GetColorClassName(this.frameColor);
-  }
-
-  public final func GetSpeakerColor() -> CName {
-    return GetColorClassName(this.speakerColor);
-  }
-
-  public final func GetTextColor() -> CName {
-    return GetColorClassName(this.textColor);
-  }
-
-  public final func AddLine(line: LineData) -> Void {
-    if line.isPersistent && this.ignorePersistentLines {
-      return;
-    }
-
-    if this.limitHistory {
-      this.lines.AddLineWithLimit(line, this.maxEntries);
-    } else {
-      this.lines.AddLine(line);
-    }
-  }
-
-  public final func GetLines() -> array<LineData> {
-    return this.lines.GetLines();
-  }
-
-  public final func ClearLines() -> Void {
-    this.lines.Clear();
+    ModSettings.UnregisterListenerToClass(this);
   }
 
   public final static func Get() -> ref<Config> {

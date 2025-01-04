@@ -6,7 +6,6 @@ class Header extends InGamePopupHeader {
   protected cb func OnCreate() {
     let header: ref<inkFlex> = new inkFlex();
     header.SetName(n"header");
-    // header.SetMargin(new inkMargin(76.0, 32.0, 76.0, 0.0));
     header.SetMargin(new inkMargin(0.0, 32.0, 0.0, 0.0));
     header.SetAnchor(inkEAnchor.TopFillHorizontaly);
 
