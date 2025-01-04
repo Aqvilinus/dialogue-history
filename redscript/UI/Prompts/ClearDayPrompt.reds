@@ -1,9 +1,10 @@
 module DialogueHistory.UI
 
 import DialogueHistory.Core.Day
-import DialogueHistory.Events.LogEvent
-import Codeware.UI.*
+import DialogueHistory.Events.RefreshLogEvent
 import Codeware.Localization.LocalizationSystem
+
+import Codeware.UI.*
 
 public class ClearDayPrompt extends InMenuPopup {
   private let m_day: wref<Day>;
@@ -48,7 +49,7 @@ public class ClearDayPrompt extends InMenuPopup {
 
   protected cb func OnConfirm() -> Void {
     this.m_day.ClearLines();
-    GameInstance.GetCallbackSystem().DispatchEvent(LogEvent.Create(this.m_day));
+    GameInstance.GetCallbackSystem().DispatchEvent(RefreshLogEvent.Create());
   }
 
 	public static func Show(requester: ref<inkGameController>, day: wref<Day>) -> ref<ClearDayPrompt> {
