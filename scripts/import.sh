@@ -1,10 +1,7 @@
-# copies the mod files from the cyberpunk directory to the mod directory
+# imports mod files from the game directory to the git directory
 
-source "$(git rev-parse --show-toplevel)/scripts/paths.sh"
+source "$(git rev-parse --show-toplevel)/scripts/utils.sh"
 
-rm -rf "${paths[ROOT]}/redscript"
-rm -rf "${paths[ROOT]}/input"
-mkdir "${paths[ROOT]}/input"
-
+# copy mod files to the git directory
 cp -r "${paths[CYBERPUNK_ROOT]}/${paths[REDSCRIPT_PATH]}/${paths[NAME]}/" "${paths[ROOT]}/redscript"
-cp -r "${paths[CYBERPUNK_ROOT]}/${paths[INPUT_PATH]}/${paths[NAME]}.xml" "${paths[ROOT]}/input"
+cp -r "${paths[CYBERPUNK_ROOT]}/${paths[INPUT_PATH]}/${paths[NAME]}.xml" "${paths[ROOT]}/input/${paths[NAME]}.xml"

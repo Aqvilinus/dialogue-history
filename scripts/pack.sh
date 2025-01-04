@@ -1,6 +1,6 @@
 # packs the mod files into a zip file for nexusmods
 
-source "$(git rev-parse --show-toplevel)/scripts/paths.sh"
+source "$(git rev-parse --show-toplevel)/scripts/utils.sh"
 
 # Import the mod if it hasn't been imported yet.
 if [ ! -d "${paths[ROOT]}/redscript" ] || [ ! -e "${paths[ROOT]}/input/${paths[NAME]}.xml" ]; then
