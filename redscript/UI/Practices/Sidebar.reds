@@ -128,7 +128,7 @@ public class Sidebar extends Practice {
 
       let isToday: Bool = day.IsToday();
       let number: Int32 = day.GetNumber();
-      let name: String = isToday ? this.GetLocalizedText("DialogueHistory-UI-Category-Today") : StrReplace(this.GetLocalizedText("DialogueHistory-UI-Category-Day"), "{num}", IntToString(number));
+      let name: String = isToday ? this.GetLocalizedText("DialogueHistory-UI-Category-Today") : StrReplace(this.GetLocalizedText("DialogueHistory-UI-Category-Day"), "{int}", IntToString(number));
 
       let button = Button.Create(day);
       button.SetName(StringToName(name));

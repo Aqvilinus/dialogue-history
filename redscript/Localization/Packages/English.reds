@@ -12,7 +12,7 @@ public class English extends ModLocalizationPackage {
 
     this.Text("DialogueHistory-UI-Category-Empty", "[No History Available]");
     this.Text("DialogueHistory-UI-Category-Today", "Today");
-    this.Text("DialogueHistory-UI-Category-Day",   "Day {num}");
+    this.Text("DialogueHistory-UI-Category-Day",   "Day {int}");
 
     this.Text("DialogueHistory-UI-Log-None",           "[No entry selected]");
     this.Text("DialogueHistory-UI-Log-Empty",          "[No lines available]");
@@ -25,7 +25,7 @@ public class English extends ModLocalizationPackage {
     this.Text("DialogueHistory-UI-Prompt-Clear-Title",        "Clear Day");
     this.Text("DialogueHistory-UI-Prompt-Clear-Description",  "Are you sure you want to clear the log for today?");
     this.Text("DialogueHistory-UI-Prompt-Delete-Title",       "Delete Day");
-    this.Text("DialogueHistory-UI-Prompt-Delete-Description", "Are you sure you want to delete the log for day {num}?");
+    this.Text("DialogueHistory-UI-Prompt-Delete-Description", "Are you sure you want to delete the log for day {int}?");
 
     this.Text("DialogueHistory-Config-General",                            "General");
     this.Text("DialogueHistory-Config-General-InputHint-DisplayName",      "Add Input Hint");

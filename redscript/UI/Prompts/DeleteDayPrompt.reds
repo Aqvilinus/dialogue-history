@@ -18,7 +18,7 @@ public class DeleteDayPrompt extends InMenuPopup {
 		content.Reparent(this);
 
 		let text = new inkText();
-    text.SetText(StrReplace(translator.GetText("DialogueHistory-UI-Prompt-Delete-Description"), "{num}", IntToString(this.m_day.GetNumber())));
+    text.SetText(StrReplace(translator.GetText("DialogueHistory-UI-Prompt-Delete-Description"), "{int}", IntToString(this.m_day.GetNumber())));
     text.SetWrapping(true, 700.0);
     text.SetFitToContent(true);
     text.SetFontFamily("base\\gameplay\\gui\\fonts\\raj\\raj.inkfontfamily");
