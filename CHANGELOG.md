@@ -1,3 +1,9 @@
+## [v1.1.0-rc3](https://github.com/Norviah/dialogue-history/compare/v1.1.0-rc2...v1.1.0-rc3) (2025-01-04)
+
+### Bug Fixes
+
+- **menu**: create a `RefreshLogEvent` event when clearing the current day's log to refresh both the sidebar and textarea <code>[dba5d7b](https://github.com/Norviah/dialogue-history/commit/dba5d7b440ab31fb8506a6a0f0bfbb3532bbc5e6)</code>
+
 ## [v1.1.0-rc2](https://github.com/Norviah/dialogue-history/compare/v1.1.0-rc1...v1.1.0-rc2) (2025-01-04)
 
 ### Refactor
