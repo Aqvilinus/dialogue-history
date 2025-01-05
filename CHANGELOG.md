@@ -1,3 +1,9 @@
+## [v1.1.0-rc4](https://github.com/Norviah/dialogue-history/compare/v1.1.0-rc3...v1.1.0-rc4) (2025-01-04)
+
+### Features
+
+- persist logs between game sessions <code>[d393b17](https://github.com/Norviah/dialogue-history/commit/d393b17f0aacc352c8f40e769d11879cfe7b91be)</code>
+
 ## [v1.1.0-rc3](https://github.com/Norviah/dialogue-history/compare/v1.1.0-rc2...v1.1.0-rc3) (2025-01-04)
 
 ### Bug Fixes
