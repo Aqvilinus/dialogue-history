@@ -3,9 +3,9 @@ module DialogueHistory.Core
 import DialogueHistory.Utils.LineData
 
 public class Day {
-  private let lines: array<LineData>;
-  private let number: Int32;
-  private let isToday: Bool = true;
+  private persistent let lines: array<LineData>;
+  private persistent let number: Int32;
+  private persistent let isToday: Bool = true;
 
   public func Initialize(day: Int32) -> Void {
     this.number = day;

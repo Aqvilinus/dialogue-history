@@ -3,7 +3,7 @@ module DialogueHistory.Core
 import DialogueHistory.Utils.LineData
 
 public class History extends ScriptableSystem {
-  private let m_days: array<ref<Day>>;
+  private persistent let m_days: array<ref<Day>>;
   private let m_config: ref<Config>;
 
   private let m_callBackID: Uint32;

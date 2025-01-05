@@ -55,5 +55,5 @@ private final func SpawnDialogLine(const lineData: script_ref<scnDialogLineData>
   }
 
   let speaker: String = StrContains(rawSpeaker, "_") ? StrToProperCase(rawSpeaker) : rawSpeaker;
-  this.m_history.AddLine(new LineData(speaker, text, data.type, data.isPersistent));
+  this.m_history.AddLine(new LineData(StringToName(speaker), StringToName(text), data.type, data.isPersistent));
 }

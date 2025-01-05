@@ -1,9 +1,8 @@
 module DialogueHistory.Utils
 
 public struct LineData {
-  // public let id: CRUID;
-  public let speakerName: String;
-  public let text: String;
-  public let type: scnDialogLineType;
-  public let isPersistent: Bool;
+  public persistent let speakerName: CName;
+  public persistent let text: CName;
+  public persistent let type: scnDialogLineType;
+  public persistent let isPersistent: Bool;
 }

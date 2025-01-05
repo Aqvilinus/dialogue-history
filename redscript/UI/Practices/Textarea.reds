@@ -150,8 +150,9 @@ public class TextArea extends Practice {
 
     for line in day.GetLines() {
       let speakerColor: CName;
+      let speakerName: String = NameToString(line.speakerName);
 
-      if Equals(line.speakerName, "V") {
+      if Equals(speakerName, "V") {
         speakerColor = GetColorClassName(config.vSpeakerColor);
       } else if Equals(line.type, scnDialogLineType.OverHead) {
         speakerColor = GetColorClassName(config.overheadColor);
@@ -170,7 +171,7 @@ public class TextArea extends Practice {
 
       let name = new inkText();
       name.SetName(n"Name");
-      name.SetText(s"\(this.GetLocalizedText(line.speakerName)): ");
+      name.SetText(s"\(this.GetLocalizedText(speakerName)): ");
       name.SetFontSize(config.fontSize);
       name.SetFontFamily("base\\gameplay\\gui\\fonts\\raj\\raj.inkfontfamily");
       name.SetStyle(r"base\\gameplay\\gui\\common\\main_colors.inkstyle");
@@ -179,7 +180,7 @@ public class TextArea extends Practice {
 
       let text = new inkText();
       text.SetName(n"Line");
-      text.SetText(line.text);
+      text.SetText(NameToString(line.text));
       text.SetFontSize(config.fontSize);
       text.SetFontFamily("base\\gameplay\\gui\\fonts\\raj\\raj.inkfontfamily");
       text.SetStyle(r"base\\gameplay\\gui\\common\\main_colors.inkstyle");
