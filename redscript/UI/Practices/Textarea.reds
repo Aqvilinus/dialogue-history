@@ -10,7 +10,7 @@ public class TextArea extends Practice {
   protected let m_noLinesAvailableText: wref<inkText>;
   protected let m_textContainer: wref<inkVerticalPanel>;
   protected let m_scrollController: wref<inkScrollController>;
-  
+
   protected cb func OnCreate() -> Void {
     let root = new inkCanvas();
     root.SetName(this.GetClassName());
@@ -192,27 +192,19 @@ public class TextArea extends Practice {
     this.m_textContainer.SetVisible(true);
     
     if config.animatePopup {
-      this.ApplyOpeningTranslation(this.m_textContainer, new Vector2(0, 150.0), 0);
+      this.ApplyOpeningTransition();
     }
   }
 
-  // credit to StealthRunner
-  protected func ApplyOpeningTranslation(widget: ref<inkWidget>, translation: Vector2, delay: Float) -> Void {
-    let currentTranslation: Vector2 = widget.GetTranslation();
-    widget.SetTranslation(currentTranslation.X - translation.X, currentTranslation.Y - translation.Y);
-    
-    let translationInterpolator: ref<inkAnimTranslation> = new inkAnimTranslation();
-    translationInterpolator.SetType(inkanimInterpolationType.Quadratic);
-    translationInterpolator.SetMode(inkanimInterpolationMode.EasyOut);
-    translationInterpolator.SetDirection(inkanimInterpolationDirection.FromTo);
-    translationInterpolator.SetStartTranslation(widget.GetTranslation());
-    translationInterpolator.SetEndTranslation(currentTranslation);
-    translationInterpolator.SetDuration(0.3);
-    translationInterpolator.SetStartDelay(delay);
+  protected func ApplyOpeningTransition() -> Void {
+    let transparencyAnim: ref<inkAnimTransparency> = new inkAnimTransparency();
+    transparencyAnim.SetStartTransparency(0.0);
+    transparencyAnim.SetEndTransparency(1.0);
+    transparencyAnim.SetDuration(0.2);
 
-    let translationsAnimDef: ref<inkAnimDef> = new inkAnimDef();
-    translationsAnimDef.AddInterpolator(translationInterpolator);
+    let transparencyAnimDef: ref<inkAnimDef> = new inkAnimDef();
+    transparencyAnimDef.AddInterpolator(transparencyAnim);
 
-    widget.PlayAnimation(translationsAnimDef);
+    this.m_textContainer.PlayAnimation(transparencyAnimDef);
   }
 }
