@@ -155,10 +155,10 @@ public class Sidebar extends Practice {
     GameInstance.GetCallbackSystem().DispatchEvent(LogEvent.Create(ref.GetDay()));
   }
   
-	protected cb func OnRelease(evt: ref<inkPointerEvent>) -> Bool {
+  protected cb func OnRelease(evt: ref<inkPointerEvent>) -> Bool {
     let button = evt.GetTarget().GetController() as Button;
 
-		if evt.IsAction(n"popup_moveUp") {
+    if evt.IsAction(n"popup_moveUp") {
       let day = button.GetDay();
 
       if !day.IsToday() {
@@ -166,8 +166,8 @@ public class Sidebar extends Practice {
       } else if !day.IsEmpty() {
         ClearDayPrompt.Show(this.GetGameController(), day);
       }
-		}
-	}
+    }
+  }
 
   private func Deactive(state: ButtonState) -> Void {
     this.m_button.SetState(state);
