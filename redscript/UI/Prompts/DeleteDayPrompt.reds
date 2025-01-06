@@ -2,8 +2,9 @@ module DialogueHistory.UI
 
 import DialogueHistory.Core.{Day, History}
 import DialogueHistory.Events.RefreshLogEvent
-import Codeware.UI.*
 import Codeware.Localization.LocalizationSystem
+
+import Codeware.UI.*
 
 public class DeleteDayPrompt extends InMenuPopup {
   private let m_day: wref<Day>;
@@ -38,7 +39,7 @@ public class DeleteDayPrompt extends InMenuPopup {
 
 		let cancelBtn = PopupButton.Create();
 		cancelBtn.SetText(GetLocalizedText("LocKey#22175"));
-		cancelBtn.SetInputAction(n"back");
+		cancelBtn.SetInputAction(n"cancel");
 		cancelBtn.Reparent(footer);
 	}
 

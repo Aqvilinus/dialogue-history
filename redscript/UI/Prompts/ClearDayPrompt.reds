@@ -39,7 +39,7 @@ public class ClearDayPrompt extends InMenuPopup {
 
 		let cancelBtn = PopupButton.Create();
 		cancelBtn.SetText(GetLocalizedText("LocKey#22175"));
-		cancelBtn.SetInputAction(n"back");
+		cancelBtn.SetInputAction(n"cancel");
 		cancelBtn.Reparent(footer);
 	}
 
