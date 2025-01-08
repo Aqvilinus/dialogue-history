@@ -147,6 +147,9 @@ public class TextArea extends Practice {
       return;
     }
 
+    let textOffset = config.showTime ? 350.0 : 250.0;
+    let wrappingWidth = config.popupWidth - padding - textOffset;
+
     for line in day.GetLines() {
       let speakerColor: CName;
       let speakerName: String = NameToString(line.speakerName);
@@ -197,7 +200,7 @@ public class TextArea extends Practice {
       text.SetFontFamily("base\\gameplay\\gui\\fonts\\raj\\raj.inkfontfamily");
       text.SetStyle(r"base\\gameplay\\gui\\common\\main_colors.inkstyle");
       text.BindProperty(n"tintColor", GetColorClassName(config.textColor));
-      text.SetWrapping(true, config.popupWidth - padding - 250.0, textWrappingPolicy.Default);
+      text.SetWrapping(true, wrappingWidth, textWrappingPolicy.Default);
       text.Reparent(row);
     }
 
