@@ -1,8 +1,9 @@
 module DialogueHistory.UI
 
 import DialogueHistory.Core.{History, Day, Config}
-import DialogueHistory.Utils.{LineData, GetColorClassName}
 import DialogueHistory.Events.LogEvent
+
+import DialogueHistory.Utils.*
 
 public class TextArea extends Practice {
   protected let m_root: wref<inkCanvas>;
@@ -129,8 +130,6 @@ public class TextArea extends Practice {
     let config = this.m_workbench.GetConfig();
     let padding = this.m_workbench.GetPadding();
 
-    let textColor = GetColorClassName(config.textColor);
-
     this.m_textContainer.SetVisible(false);
     this.m_noEntryText.SetVisible(false);
     this.m_noLinesAvailableText.SetVisible(false);
@@ -169,6 +168,19 @@ public class TextArea extends Practice {
       row.SetAnchor(inkEAnchor.TopLeft);
       row.Reparent(this.m_textContainer);
 
+      if config.showTime {
+        let formattedTime = Equals(config.timeFormat, TimeFormat.TwentyFourHour) ? FormatTwentyFourHour(line) : FormatTwelveHour(line);
+
+        let time = new inkText();
+        time.SetName(n"Time");
+        time.SetText(s"\(formattedTime)  ");
+        time.SetFontSize(config.fontSize);
+        time.SetFontFamily("base\\gameplay\\gui\\fonts\\raj\\raj.inkfontfamily");
+        time.SetStyle(r"base\\gameplay\\gui\\common\\main_colors.inkstyle");
+        time.BindProperty(n"tintColor", GetColorClassName(config.timeColor));
+        time.Reparent(row);
+      }
+
       let name = new inkText();
       name.SetName(n"Name");
       name.SetText(s"\(this.GetLocalizedText(speakerName)): ");
@@ -184,8 +196,8 @@ public class TextArea extends Practice {
       text.SetFontSize(config.fontSize);
       text.SetFontFamily("base\\gameplay\\gui\\fonts\\raj\\raj.inkfontfamily");
       text.SetStyle(r"base\\gameplay\\gui\\common\\main_colors.inkstyle");
-      text.BindProperty(n"tintColor", textColor);
-      text.SetWrapping(true, config.popupWidth - padding - 220.0, textWrappingPolicy.Default);
+      text.BindProperty(n"tintColor", GetColorClassName(config.textColor));
+      text.SetWrapping(true, config.popupWidth - padding - 250.0, textWrappingPolicy.Default);
       text.Reparent(row);
     }
 

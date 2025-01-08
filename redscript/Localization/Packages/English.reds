@@ -38,6 +38,10 @@ public class English extends ModLocalizationPackage {
     this.Text("DialogueHistory-Config-General-Persistent-Description",     "Whether to not store persistent subtitles in the history, which will most likely lead to repeated lines if disabled.");
 
     this.Text("DialogueHistory-Config-Interface",                               "Interface");
+    this.Text("DialogueHistory-Config-Interface-ShowTime-DisplayName",          "Show Time");
+    this.Text("DialogueHistory-Config-Interface-ShowTime-Description",          "Whether if the time of a line should be shown.");
+    this.Text("DialogueHistory-Config-Interface-TimeFormat-DisplayName",        "Time Format");
+    this.Text("DialogueHistory-Config-Interface-TimeFormat-Description",        "How the time should be formatted.");
     this.Text("DialogueHistory-Config-Interface-Animate-DisplayName",           "Animate");
     this.Text("DialogueHistory-Config-Interface-Animate-Description",           "Whether if some parts of the popup should animate.");
     this.Text("DialogueHistory-Config-Interface-Height-DisplayName",            "Height");
@@ -50,6 +54,8 @@ public class English extends ModLocalizationPackage {
     this.Text("DialogueHistory-Config-Interface-Margin-Description",            "The amount of space to leave between lines.");
     this.Text("DialogueHistory-Config-Interface-FrameColor-DisplayName",        "Frame Color");
     this.Text("DialogueHistory-Config-Interface-FrameColor-Description",        "The color of the frame of the widget.");
+    this.Text("DialogueHistory-Config-Interface-TimeColor-DisplayName",         "Time Color");
+    this.Text("DialogueHistory-Config-Interface-TimeColor-Description",         "The color for the time of the line.");
     this.Text("DialogueHistory-Config-Interface-VNameColor-DisplayName",        "V Name Color");
     this.Text("DialogueHistory-Config-Interface-VNameColor-Description",        "The color for V's name in subtitles.");
     this.Text("DialogueHistory-Config-Interface-OverheadNameColor-DisplayName", "Overhead Name Color");
@@ -63,28 +69,31 @@ public class English extends ModLocalizationPackage {
     this.Text("DialogueHistory-Config-Interface-TextColor-DisplayName",         "Subtitle Text Color");
     this.Text("DialogueHistory-Config-Interface-TextColor-Description",         "The color for the text of all subtitles.");
 
-    this.Text("DialogueHistory-Color-White", "White");
-    this.Text("DialogueHistory-Color-Red", "Red");
-    this.Text("DialogueHistory-Color-ActiveRed", "Active Red");
-    this.Text("DialogueHistory-Color-MildRed", "Mild Red");
-    this.Text("DialogueHistory-Color-DarkRed", "Dark Red");
-    this.Text("DialogueHistory-Color-FaintRed", "Faint Red");
-    this.Text("DialogueHistory-Color-Blue", "Blue");
-    this.Text("DialogueHistory-Color-ActiveBlue", "Active Blue");
-    this.Text("DialogueHistory-Color-MildBlue", "Mild Blue");
-    this.Text("DialogueHistory-Color-DarkBlue", "Dark Blue");
-    this.Text("DialogueHistory-Color-FaintBlue", "Faint Blue");
-    this.Text("DialogueHistory-Color-MediumBlue", "Medium Blue");
-    this.Text("DialogueHistory-Color-Yellow", "Yellow");
+    this.Text("DialogueHistory-Color-White",        "White");
+    this.Text("DialogueHistory-Color-Red",          "Red");
+    this.Text("DialogueHistory-Color-ActiveRed",    "Active Red");
+    this.Text("DialogueHistory-Color-MildRed",      "Mild Red");
+    this.Text("DialogueHistory-Color-DarkRed",      "Dark Red");
+    this.Text("DialogueHistory-Color-FaintRed",     "Faint Red");
+    this.Text("DialogueHistory-Color-Blue",         "Blue");
+    this.Text("DialogueHistory-Color-ActiveBlue",   "Active Blue");
+    this.Text("DialogueHistory-Color-MildBlue",     "Mild Blue");
+    this.Text("DialogueHistory-Color-DarkBlue",     "Dark Blue");
+    this.Text("DialogueHistory-Color-FaintBlue",    "Faint Blue");
+    this.Text("DialogueHistory-Color-MediumBlue",   "Medium Blue");
+    this.Text("DialogueHistory-Color-Yellow",       "Yellow");
     this.Text("DialogueHistory-Color-ActiveYellow", "Active Yellow");
-    this.Text("DialogueHistory-Color-MildYellow", "Mild Yellow");
-    this.Text("DialogueHistory-Color-Gold", "Gold");
-    this.Text("DialogueHistory-Color-FaintYellow", "Faint Yellow");
-    this.Text("DialogueHistory-Color-DarkGold", "Dark Gold");
-    this.Text("DialogueHistory-Color-Green", "Green");
-    this.Text("DialogueHistory-Color-MildGreen", "Mild Green");
-    this.Text("DialogueHistory-Color-ActiveGreen", "Active Green");
-    this.Text("DialogueHistory-Color-DarkGreen", "Dark Green");
-    this.Text("DialogueHistory-Color-Orange", "Orange");
+    this.Text("DialogueHistory-Color-MildYellow",   "Mild Yellow");
+    this.Text("DialogueHistory-Color-Gold",         "Gold");
+    this.Text("DialogueHistory-Color-FaintYellow",  "Faint Yellow");
+    this.Text("DialogueHistory-Color-DarkGold",     "Dark Gold");
+    this.Text("DialogueHistory-Color-Green",        "Green");
+    this.Text("DialogueHistory-Color-MildGreen",    "Mild Green");
+    this.Text("DialogueHistory-Color-ActiveGreen",  "Active Green");
+    this.Text("DialogueHistory-Color-DarkGreen",    "Dark Green");
+    this.Text("DialogueHistory-Color-Orange",       "Orange");
+
+    this.Text("DialogueHistory-TimeFormat-TwelveHour",     "12-Hour");
+    this.Text("DialogueHistory-TimeFormat-TwentyFourHour", "24-Hour");
   }
 }
