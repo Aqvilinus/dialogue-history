@@ -39,7 +39,7 @@ public class English extends ModLocalizationPackage {
 
     this.Text("DialogueHistory-Config-Interface",                               "Interface");
     this.Text("DialogueHistory-Config-Interface-ShowTime-DisplayName",          "Show Time");
-    this.Text("DialogueHistory-Config-Interface-ShowTime-Description",          "Whether if the time of a line should be shown.");
+    this.Text("DialogueHistory-Config-Interface-ShowTime-Description",          "Whether if a line's timestamp should be shown.");
     this.Text("DialogueHistory-Config-Interface-TimeFormat-DisplayName",        "Time Format");
     this.Text("DialogueHistory-Config-Interface-TimeFormat-Description",        "How the time should be formatted.");
     this.Text("DialogueHistory-Config-Interface-Animate-DisplayName",           "Animate");
@@ -55,7 +55,7 @@ public class English extends ModLocalizationPackage {
     this.Text("DialogueHistory-Config-Interface-FrameColor-DisplayName",        "Frame Color");
     this.Text("DialogueHistory-Config-Interface-FrameColor-Description",        "The color of the frame of the widget.");
     this.Text("DialogueHistory-Config-Interface-TimeColor-DisplayName",         "Time Color");
-    this.Text("DialogueHistory-Config-Interface-TimeColor-Description",         "The color for the time of the line.");
+    this.Text("DialogueHistory-Config-Interface-TimeColor-Description",         "The color for a line's timestamp.");
     this.Text("DialogueHistory-Config-Interface-VNameColor-DisplayName",        "V Name Color");
     this.Text("DialogueHistory-Config-Interface-VNameColor-Description",        "The color for V's name in subtitles.");
     this.Text("DialogueHistory-Config-Interface-OverheadNameColor-DisplayName", "Overhead Name Color");
