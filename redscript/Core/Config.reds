@@ -135,6 +135,8 @@ public class Config extends ScriptableService {
   @runtimeProperty("ModSettings.displayValues.ActiveGreen", "DialogueHistory-Color-ActiveGreen")
   @runtimeProperty("ModSettings.displayValues.DarkGreen", "DialogueHistory-Color-DarkGreen")
   @runtimeProperty("ModSettings.displayValues.Orange", "DialogueHistory-Color-Orange")
+  @runtimeProperty("ModSettings.displayValues.Grey", "DialogueHistory-Color-Grey")
+  @runtimeProperty("ModSettings.displayValues.DarkGrey", "DialogueHistory-Color-DarkGrey")
   public let frameColor: Color = Color.MildRed;
 
   @runtimeProperty("ModSettings.mod", "Dialogue History")
@@ -166,7 +168,9 @@ public class Config extends ScriptableService {
   @runtimeProperty("ModSettings.displayValues.ActiveGreen", "DialogueHistory-Color-ActiveGreen")
   @runtimeProperty("ModSettings.displayValues.DarkGreen", "DialogueHistory-Color-DarkGreen")
   @runtimeProperty("ModSettings.displayValues.Orange", "DialogueHistory-Color-Orange")
-  public let timeColor: Color = Color.White;
+  @runtimeProperty("ModSettings.displayValues.Grey", "DialogueHistory-Color-Grey")
+  @runtimeProperty("ModSettings.displayValues.DarkGrey", "DialogueHistory-Color-DarkGrey")
+  public let timeColor: Color = Color.DarkGrey;
 
   @runtimeProperty("ModSettings.mod", "Dialogue History")
   @runtimeProperty("ModSettings.category", "DialogueHistory-Config-Interface")
@@ -196,6 +200,8 @@ public class Config extends ScriptableService {
   @runtimeProperty("ModSettings.displayValues.ActiveGreen", "DialogueHistory-Color-ActiveGreen")
   @runtimeProperty("ModSettings.displayValues.DarkGreen", "DialogueHistory-Color-DarkGreen")
   @runtimeProperty("ModSettings.displayValues.Orange", "DialogueHistory-Color-Orange")
+  @runtimeProperty("ModSettings.displayValues.Grey", "DialogueHistory-Color-Grey")
+  @runtimeProperty("ModSettings.displayValues.DarkGrey", "DialogueHistory-Color-DarkGrey")
   public let vSpeakerColor: Color = Color.Red;
 
   @runtimeProperty("ModSettings.mod", "Dialogue History")
@@ -226,6 +232,8 @@ public class Config extends ScriptableService {
   @runtimeProperty("ModSettings.displayValues.ActiveGreen", "DialogueHistory-Color-ActiveGreen")
   @runtimeProperty("ModSettings.displayValues.DarkGreen", "DialogueHistory-Color-DarkGreen")
   @runtimeProperty("ModSettings.displayValues.Orange", "DialogueHistory-Color-Orange")
+  @runtimeProperty("ModSettings.displayValues.Grey", "DialogueHistory-Color-Grey")
+  @runtimeProperty("ModSettings.displayValues.DarkGrey", "DialogueHistory-Color-DarkGrey")
   public let overheadColor: Color = Color.Blue;
 
   @runtimeProperty("ModSettings.mod", "Dialogue History")
@@ -256,6 +264,8 @@ public class Config extends ScriptableService {
   @runtimeProperty("ModSettings.displayValues.ActiveGreen", "DialogueHistory-Color-ActiveGreen")
   @runtimeProperty("ModSettings.displayValues.DarkGreen", "DialogueHistory-Color-DarkGreen")
   @runtimeProperty("ModSettings.displayValues.Orange", "DialogueHistory-Color-Orange")
+  @runtimeProperty("ModSettings.displayValues.Grey", "DialogueHistory-Color-Grey")
+  @runtimeProperty("ModSettings.displayValues.DarkGrey", "DialogueHistory-Color-DarkGrey")
   public let radioColor: Color = Color.Green;
 
   @runtimeProperty("ModSettings.mod", "Dialogue History")
@@ -286,6 +296,8 @@ public class Config extends ScriptableService {
   @runtimeProperty("ModSettings.displayValues.ActiveGreen", "DialogueHistory-Color-ActiveGreen")
   @runtimeProperty("ModSettings.displayValues.DarkGreen", "DialogueHistory-Color-DarkGreen")
   @runtimeProperty("ModSettings.displayValues.Orange", "DialogueHistory-Color-Orange")
+  @runtimeProperty("ModSettings.displayValues.Grey", "DialogueHistory-Color-Grey")
+  @runtimeProperty("ModSettings.displayValues.DarkGrey", "DialogueHistory-Color-DarkGrey")
   public let globalTVColor: Color = Color.Yellow;
 
   @runtimeProperty("ModSettings.mod", "Dialogue History")
@@ -316,6 +328,8 @@ public class Config extends ScriptableService {
   @runtimeProperty("ModSettings.displayValues.ActiveGreen", "DialogueHistory-Color-ActiveGreen")
   @runtimeProperty("ModSettings.displayValues.DarkGreen", "DialogueHistory-Color-DarkGreen")
   @runtimeProperty("ModSettings.displayValues.Orange", "DialogueHistory-Color-Orange")
+  @runtimeProperty("ModSettings.displayValues.Grey", "DialogueHistory-Color-Grey")
+  @runtimeProperty("ModSettings.displayValues.DarkGrey", "DialogueHistory-Color-DarkGrey")
   public let speakerColor: Color = Color.Red;
 
   @runtimeProperty("ModSettings.mod", "Dialogue History")
@@ -346,6 +360,8 @@ public class Config extends ScriptableService {
   @runtimeProperty("ModSettings.displayValues.ActiveGreen", "DialogueHistory-Color-ActiveGreen")
   @runtimeProperty("ModSettings.displayValues.DarkGreen", "DialogueHistory-Color-DarkGreen")
   @runtimeProperty("ModSettings.displayValues.Orange", "DialogueHistory-Color-Orange")
+  @runtimeProperty("ModSettings.displayValues.Grey", "DialogueHistory-Color-Grey")
+  @runtimeProperty("ModSettings.displayValues.DarkGrey", "DialogueHistory-Color-DarkGrey")
   public let textColor: Color = Color.White;
 
   private cb func OnLoad() -> Void {

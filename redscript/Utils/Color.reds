@@ -24,6 +24,8 @@ public enum Color {
   ActiveGreen = 20,
   DarkGreen = 21,
   Orange = 22,
+  Grey = 23,
+  DarkGrey = 24,
 }
 
 public final static func GetColorClassName(color: Color) -> CName {
@@ -74,6 +76,10 @@ public final static func GetColorClassName(color: Color) -> CName {
       return n"MainColors.DarkGreen";
     case Color.Orange:
       return n"MainColors.Orange";
+    case Color.Grey:
+      return n"MainColors.Grey";
+    case Color.DarkGrey:
+      return n"MainColors.DarkGrey";
     default:
       return n"MainColors.White";
   }

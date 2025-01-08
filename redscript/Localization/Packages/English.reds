@@ -92,6 +92,8 @@ public class English extends ModLocalizationPackage {
     this.Text("DialogueHistory-Color-ActiveGreen",  "Active Green");
     this.Text("DialogueHistory-Color-DarkGreen",    "Dark Green");
     this.Text("DialogueHistory-Color-Orange",       "Orange");
+    this.Text("DialogueHistory-Color-Grey",         "Grey");
+    this.Text("DialogueHistory-Color-DarkGrey",     "Dark Grey");
 
     this.Text("DialogueHistory-TimeFormat-TwelveHour",     "12-Hour");
     this.Text("DialogueHistory-TimeFormat-TwentyFourHour", "24-Hour");
