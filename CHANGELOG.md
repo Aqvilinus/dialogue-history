@@ -1,3 +1,9 @@
+## [v1.1.1](https://github.com/Norviah/dialogue-history/compare/v1.1.0...v1.1.1) (2025-01-07)
+
+### Bug Fixes
+
+- decrease the wrapping width to prevent text overflow when also showing a line's timestamp <code>[769db36](https://github.com/Norviah/dialogue-history/commit/769db36a3a9f9189b381a6e40ed39da76fd771d4)</code>
+
 ## [v1.1.0](https://github.com/Norviah/dialogue-history/compare/v1.1.0-rc4...v1.1.0) (2025-01-07)
 
 ### Build System
