@@ -1,3 +1,29 @@
+## [v1.1.0](https://github.com/Norviah/dialogue-history/compare/v1.1.0-rc4...v1.1.0) (2025-01-07)
+
+### Build System
+
+- add support for `ui` commit type <code>[ef03909](https://github.com/Norviah/dialogue-history/commit/ef03909545de70eab5306fdb14b0dabdb41ed91d)</code>
+
+### Bug Fixes
+
+- consider `OverHeadAlwaysVisible` to determine if a line represents an overhead subtitle <code>[0797275](https://github.com/Norviah/dialogue-history/commit/0797275c72d62ec038d8caa58fceaa8562928c3d)</code>
+
+- let escape/right-click/etc. cancel prompts <code>[5c41ec4](https://github.com/Norviah/dialogue-history/commit/5c41ec4138a57a6ff06c4d89d03ede64dc5e1396)</code>
+
+### Features
+
+- **colors**: add `Grey` and `DarkGrey` <code>[4709997](https://github.com/Norviah/dialogue-history/commit/470999770798a91d1f8a598e80f4c470b38fbed2)</code>
+
+- store timestamp for lines <code>[a5b82b6](https://github.com/Norviah/dialogue-history/commit/a5b82b6966958d8b56a209c49ef89cbe6ea7b060)</code>
+
+- **localization**: add french translation <code>[8d826c4](https://github.com/Norviah/dialogue-history/commit/8d826c4effdd680110f0267752488f31ea58b7bf)</code>
+
+	thank you to Gigowatt221
+
+### UI
+
+- change the opening transition for lines to a fade-in <code>[2c6ec4f](https://github.com/Norviah/dialogue-history/commit/2c6ec4fbd3a9724138d4fa5dbf1e0e1796ca698f)</code>
+
 ## [v1.1.0-rc4](https://github.com/Norviah/dialogue-history/compare/v1.1.0-rc3...v1.1.0-rc4) (2025-01-04)
 
 ### Features
