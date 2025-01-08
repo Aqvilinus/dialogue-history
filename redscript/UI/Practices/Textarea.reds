@@ -153,7 +153,7 @@ public class TextArea extends Practice {
 
       if Equals(speakerName, "V") {
         speakerColor = GetColorClassName(config.vSpeakerColor);
-      } else if Equals(line.type, scnDialogLineType.OverHead) {
+      } else if Equals(line.type, scnDialogLineType.OverHead) || Equals(line.type, scnDialogLineType.OverHeadAlwaysVisible) {
         speakerColor = GetColorClassName(config.overheadColor);
       } else if Equals(line.type, scnDialogLineType.Radio) {
         speakerColor = GetColorClassName(config.radioColor);
