@@ -1,3 +1,9 @@
+## [v1.1.2](https://github.com/Norviah/dialogue-history/compare/v1.1.1...v1.1.2) (2025-01-10)
+
+### Bug Fixes
+
+- ignore subtitles that were drawn twice <code>[63c41fd](https://github.com/Norviah/dialogue-history/commit/63c41fd02ed771e9aa57b05851636245d59d4acd)</code>
+
 ## [v1.1.1](https://github.com/Norviah/dialogue-history/compare/v1.1.0...v1.1.1) (2025-01-07)
 
 ### Bug Fixes
