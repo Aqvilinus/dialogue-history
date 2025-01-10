@@ -10,6 +10,7 @@ public class History extends ScriptableSystem {
   private let m_config: ref<Config>;
   private let m_translator: ref<LocalizationSystem>;
   private let m_callBackID: Uint32;
+  private let m_lastID: CRUID;
 
   private func OnAttach() -> Void {
     this.m_config = Config.Get();
@@ -56,7 +57,7 @@ public class History extends ScriptableSystem {
   } 
 
   public func AddLine(line: scnDialogLineData) -> Void {
-     if this.m_config.ignorePersistentLines && line.isPersistent {
+     if Equals(line.id, this.m_lastID) || (this.m_config.ignorePersistentLines && line.isPersistent) {
       return;
     }
 
@@ -83,6 +84,7 @@ public class History extends ScriptableSystem {
     let lineData: LineData = new LineData(StringToName(speaker), StringToName(text), line.type, gameTime.Hours(), gameTime.Minutes());
 
     this.GetToday(gameTime.Days()).AddLine(lineData);
+    this.m_lastID = line.id;
   }
 
   public func GetSize() -> Int32 {
