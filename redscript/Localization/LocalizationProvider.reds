@@ -12,6 +12,8 @@ public class LocalizationProvider extends ModLocalizationProvider {
         return new French();
       case n"zh-cn":
         return new Chinese();
+      case n"ru-ru":
+        return new Russian();
       default:
         return null;
     }
